@@ -311,6 +311,9 @@ modules:
   ##   docroot: "/var/www"
   ##   accesslog: "/var/log/ejabberd/access.log"
   mod_last: {}
+  mod_mam:
+    db_type: odbc
+    default: always
   mod_muc:
     host: "conference.@HOST@"
     access: muc
@@ -409,6 +412,8 @@ sql_server: "{{ env['EJABBERD_ODBC_SERVER'] }}"
 sql_database: "{{ env['EJABBERD_ODBC_DATABASE'] }}"
 sql_username: "{{ env['EJABBERD_ODBC_USERNAME'] }}"
 sql_password: "{{ env['EJABBERD_ODBC_PASSWORD'] }}"
+
+default_db: sql
 {% endif %}
 
 {%- if env['EJABBERD_DEFAULT_DB'] is defined %}
