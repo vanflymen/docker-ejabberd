@@ -404,12 +404,11 @@ host_config:
 {%- if env['EJABBERD_CONFIGURE_ODBC'] == "true" %}
 ###   ====================
 ###   ODBC DATABASE CONFIG
-odbc_type: {{ env['EJABBERD_ODBC_TYPE'] }}
-odbc_server: {{ env['EJABBERD_ODBC_SERVER'] }}
-odbc_database: {{ env['EJABBERD_ODBC_DATABASE'] }}
-odbc_username: {{ env['EJABBERD_ODBC_USERNAME'] }}
-odbc_password: {{ env['EJABBERD_ODBC_PASSWORD'] }}
-odbc_pool_size: {{ env['EJABBERD_ODBC_POOL_SIZE'] }}
+sql_type: {{ env['EJABBERD_ODBC_TYPE'] }}
+sql_server: "{{ env['EJABBERD_ODBC_SERVER'] }}"
+sql_database: "{{ env['EJABBERD_ODBC_DATABASE'] }}"
+sql_username: "{{ env['EJABBERD_ODBC_USERNAME'] }}"
+sql_password: "{{ env['EJABBERD_ODBC_PASSWORD'] }}"
 {% endif %}
 
 {%- if env['EJABBERD_DEFAULT_DB'] is defined %}
